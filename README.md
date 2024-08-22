@@ -28,7 +28,7 @@ jobs:
 
     - name: Bump Version
       id: bump
-      uses: avenuebankau/maven-version-bump-action@v3
+      uses: avenuebankau/maven-version-bump-action@v1
       with:
         github-token: ${{ secrets.github_token }}
 
