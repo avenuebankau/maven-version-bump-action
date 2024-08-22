@@ -2,7 +2,7 @@
 
 A simple GitHub Actions to bump the version of Maven projects.
 
-When triggered, this action will look at the commit message of HEAD~1 and determine if it contains one of `#major`, `#minor`, or `#patch` (in that order of precedence).
+When triggered, this action will look at the commit message of HEAD~1 and determine if it contains one of `:major`, `:minor`, or `:patch` (in that order of precedence).
 If true, it will use Maven to bump your pom's version.
 
 You can override this default behavior by setting a release type, setting type will override the above commit message check.
@@ -28,7 +28,7 @@ jobs:
 
     - name: Bump Version
       id: bump
-      uses: nnichols/maven-version-bump-action@v3
+      uses: avenuebankau/maven-version-bump-action@v3
       with:
         github-token: ${{ secrets.github_token }}
 
@@ -48,8 +48,3 @@ jobs:
 
 * `version` - The after-bump version. Will return the old version if bump was not necessary.
 
-## Licensing
-
-Copyright © 2021-2022 [Nick Nichols](https://nnichols.github.io/)
-
-Distributed under the [MIT License](https://github.com/nnichols/maven-version-bump-action/blob/master/LICENSE)
