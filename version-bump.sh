@@ -39,11 +39,11 @@ BUMP_MODE="none"
 
 if [[ "${TYPE}" == "" ]]
 then
-  if git log -1 | grep -q ":major"; then
+  if git log -1 | grep -q -e ":major" -e "major" -e "breaking"; then
   BUMP_MODE="major"
-  elif git log -1 | grep -q ":minor"; then
+  elif git log -1 | grep -q -e ":minor" -e "minor" -e "feat" -e "feature" -e "refactor" -e "perf" -e "revert"; then
   BUMP_MODE="minor"
-  elif git log -1 | grep -q ":patch"; then
+  elif git log -1 | grep -q -e ":patch" -e "patch" -e "fix" -e "hotfix" -e "docs" -e ""; then
   BUMP_MODE="patch"
   fi
 else
